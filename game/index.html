@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080e16">
+  <meta name="description" content="MIDNIGHT MERIDIAN: an original, offline museum stealth heist. Steal the diamond and reach the getaway van.">
+  <title>MIDNIGHT MERIDIAN — a museum stealth heist</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #080e16; }
+    body {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      color: #a8b1b5;
+      font: 12px/1.7 Arial, sans-serif;
+    }
+    main { width: min(1152px, calc(100vw - 32px), calc((100svh - 74px) * 1.5)); }
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      background: #101923;
+      border: 1px solid #31414c;
+      box-shadow: 0 14px 60px #0005;
+      touch-action: none;
+    }
+    canvas:focus { outline: none; }
+    canvas:focus-visible { outline: 2px solid #dfbf7d; outline-offset: 3px; }
+    p { margin: 13px 0 0; text-align: center; }
+    kbd { font: inherit; color: #d9dbce; padding: 1px 3px; }
+    .status {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <canvas id="museum" width="1152" height="768" tabindex="0" aria-label="MIDNIGHT MERIDIAN, a top-down museum stealth heist. Enter to plan a loadout; arrow keys adjust it; Enter starts. WASD or arrows move, Shift sneaks, E interacts, 1 EMP, 2 decoy at the mouse, 3 smoke, M mute, P or Escape pause, R replan.">
+      MIDNIGHT MERIDIAN needs a browser with canvas and JavaScript enabled.
+    </canvas>
+    <p><kbd>WASD / arrows</kbd> move &nbsp; <kbd>Shift</kbd> sneak &nbsp; <kbd>E</kbd> hold to interact &nbsp; <kbd>1</kbd> EMP &nbsp; <kbd>2</kbd> decoy at mouse &nbsp; <kbd>3</kbd> smoke &nbsp; <kbd>M</kbd> mute &nbsp; <kbd>P / Esc</kbd> pause &nbsp; <kbd>R</kbd> replan</p>
+    <span id="game-status" class="status" role="status" aria-live="polite"></span>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
